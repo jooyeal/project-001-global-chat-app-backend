@@ -1,0 +1,16 @@
+components:
+  schemas:
+    User:
+      properties:
+        email:
+          type: string
+        nickname:
+          type: string
+        password:
+          type: string
+        firstLanguage:
+          type: string
+        secondLanguage:
+          type: string
+        isAdmin:
+          type: boolean

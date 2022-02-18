@@ -1,0 +1,17 @@
+components:
+  schemas:
+    LoginSuccess:
+      properties:
+        userInfo:
+          type: object
+          properties:
+            email:
+              type: string
+            nickname:
+              type: string
+            firstLanguage:
+              type: string
+            secondLanguage:
+              type: string
+        accessToken:
+          type: string
