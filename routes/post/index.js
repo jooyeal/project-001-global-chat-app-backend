@@ -1,3 +1,5 @@
+const { createPost } = require("./controller");
+
 const router = require("express").Router();
 
 /**
@@ -43,6 +45,6 @@ const router = require("express").Router();
  *       "500":
  *         description: プログラムエラー
  */
-router.post("/", () => {});
+router.post("/", createPost);
 
 module.exports = router;
