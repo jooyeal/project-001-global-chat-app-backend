@@ -1,17 +1,24 @@
-components:
-  schemas:
-    LoginSuccess:
-      properties:
-        userInfo:
-          type: object
-          properties:
-            email:
-              type: string
-            nickname:
-              type: string
-            firstLanguage:
-              type: string
-            secondLanguage:
-              type: string
-        accessToken:
-          type: string
+definitions:
+  LoginSuccess:
+    properties:
+      userInfo:
+        type: object
+        properties:
+          _id:
+            type: string
+          email:
+            type: string
+          nickname:
+            type: string
+          firstLanguage:
+            type: string
+          secondLanguage:
+            type: string
+          createdAt:
+            type: string
+            format: date-time
+          updatedAt:
+            type: string
+            format: date-time
+      accessToken:
+        type: string

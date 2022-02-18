@@ -7,7 +7,7 @@ const router = require("express").Router();
  *  /signup:
  *   post:
  *     tags:
- *     - "auth"
+ *     - "Auth"
  *     description: ""
  *     summary: 会員登録api
  *     parameters:
@@ -40,7 +40,7 @@ const router = require("express").Router();
  *       "200":
  *         description: 正常
  *         schema:
- *          $ref: '#/components/schemas/User'
+ *          $ref: '#/definitions/User'
  *       "500":
  *         description: プログラムエラー
  */
@@ -52,7 +52,7 @@ router.post("/signup", signup);
  *  /signin:
  *   post:
  *     tags:
- *     - "auth"
+ *     - "Auth"
  *     description: ""
  *     summary: ログイン
  *     parameters:
@@ -70,7 +70,7 @@ router.post("/signup", signup);
  *       "200":
  *         description: 正常
  *         schema:
- *          $ref: '#/components/schemas/LoginSuccess'
+ *          $ref: '#/definitions/LoginSuccess'
  *       "401":
  *         description: ""
  *       "500":

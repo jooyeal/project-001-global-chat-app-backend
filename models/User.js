@@ -24,6 +24,30 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    follows: [
+      {
+        id: {
+          type: String,
+          required: true,
+        },
+        firstLanguage: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
+    followers: [
+      {
+        id: {
+          type: String,
+          required: true,
+        },
+        firstLanguage: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
     isAdmin: {
       type: Boolean,
       default: false,

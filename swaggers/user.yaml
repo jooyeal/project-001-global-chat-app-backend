@@ -1,16 +1,41 @@
-components:
-  schemas:
-    User:
-      properties:
-        email:
-          type: string
-        nickname:
-          type: string
-        password:
-          type: string
-        firstLanguage:
-          type: string
-        secondLanguage:
-          type: string
-        isAdmin:
-          type: boolean
+definitions:
+  User:
+    properties:
+      _id:
+        type: string
+      email:
+        type: string
+      nickname:
+        type: string
+      password:
+        type: string
+      firstLanguage:
+        type: string
+      secondLanguage:
+        type: string
+      follows:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+            firstLanguage:
+              type: string
+      followers:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+            firstLanguage:
+              type: string
+      isAdmin:
+        type: boolean
+      createdAt:
+        type: string
+        format: date-time
+      updatedAt:
+        type: string
+        format: date-time

@@ -1,0 +1,50 @@
+definitions:
+  Post:
+    properties:
+      _id:
+        type: string
+      userId:
+        type: string
+      desc:
+        type: string
+      photos:
+        type: array
+        items:
+          type: object
+          properties:
+            url:
+              type: string
+      audios:
+        type: array
+        items:
+          type: object
+          properties:
+            url:
+              type: string
+      videos:
+        type: array
+        items:
+          type: object
+          properties:
+            url:
+              type: string
+      comments:
+        type: array
+        items:
+          type: object
+          properties:
+            userId:
+              type: string
+            nickname:
+              type: string
+            desc:
+              type: string
+      likes:
+        type: array
+        items:
+          type: object
+          properties:
+            userId:
+              type: string
+            nickname:
+              type: string

@@ -8,13 +8,15 @@ const options = {
       version: "1.0.0",
       description: "Global Chat API with node.js express",
     },
+    basePath: "/api",
     servers: [
       {
         url: "http://localhost:8000",
       },
     ],
+    definitions: {},
   },
-  apis: ["./routes/*.js", "./swaggers/*"],
+  apis: ["./routes/*/*.js", "./swaggers/*"],
 };
 
 const specs = swaggereJsdoc(options);
