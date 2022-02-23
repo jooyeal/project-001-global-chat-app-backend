@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const signup = async (req, res) => {
   const newUser = new User({
     email: req.body.email,
-    nickname: req.body.email,
+    nickname: req.body.nickname,
     password: CryptoJS.AES.encrypt(req.body.password, process.env.PASS_SEC),
     firstLanguage: req.body.firstLanguage,
     secondLanguage: req.body.secondLanguage,
