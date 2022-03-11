@@ -11,6 +11,8 @@ const {
   removeLike,
 } = require("./controller");
 
+const { verifyToken } = require("../../middleware/verify");
+
 const router = require("express").Router();
 
 /**
@@ -56,7 +58,7 @@ const router = require("express").Router();
  *       "500":
  *         description: プログラムエラー
  */
-router.post("/", uploadPost);
+router.post("/", verifyToken, uploadPost);
 
 /**
  * @swagger
@@ -79,7 +81,7 @@ router.post("/", uploadPost);
  *       "500":
  *         description: プログラムエラー
  */
-router.get("/:id", getPostData);
+router.get("/:id", verifyToken, getPostData);
 
 /**
  * @swagger
@@ -102,7 +104,7 @@ router.get("/:id", getPostData);
  *       "500":
  *         description: プログラムエラー
  */
-router.get("/page/:number", getPostDataAtPage);
+router.get("/page/:number", verifyToken, getPostDataAtPage);
 
 /**
  * @swagger
@@ -129,7 +131,7 @@ router.get("/page/:number", getPostDataAtPage);
  *       "500":
  *         description: プログラムエラー
  */
-router.put("/:id", modifyPost);
+router.put("/:id", verifyToken, modifyPost);
 
 /**
  * @swagger
@@ -152,7 +154,7 @@ router.put("/:id", modifyPost);
  *       "500":
  *         description: プログラムエラー
  */
-router.delete("/:id", deletePost);
+router.delete("/:id", verifyToken, deletePost);
 
 /**
  * @swagger
@@ -177,7 +179,7 @@ router.delete("/:id", deletePost);
  *       "500":
  *         description: プログラムエラー
  */
-router.post("/comment/:id", addComment);
+router.post("/comment/:id", verifyToken, addComment);
 
 /**
  * @swagger
@@ -204,7 +206,7 @@ router.post("/comment/:id", addComment);
  *       "500":
  *         description: プログラムエラー
  */
-router.put("/comment/:id", modifyComment);
+router.put("/comment/:id", verifyToken, modifyComment);
 
 /**
  * @swagger
@@ -229,7 +231,7 @@ router.put("/comment/:id", modifyComment);
  *       "500":
  *         description: プログラムエラー
  */
-router.delete("/comment/:id", deleteComment);
+router.delete("/comment/:id", verifyToken, deleteComment);
 
 /**
  * @swagger
@@ -254,7 +256,7 @@ router.delete("/comment/:id", deleteComment);
  *       "500":
  *         description: プログラムエラー
  */
-router.post("/like/:id", addLike);
+router.post("/like/:id", verifyToken, addLike);
 
 /**
  * @swagger
@@ -279,6 +281,6 @@ router.post("/like/:id", addLike);
  *       "500":
  *         description: プログラムエラー
  */
-router.delete("/like/:id", removeLike);
+router.delete("/like/:id", verifyToken, removeLike);
 
 module.exports = router;

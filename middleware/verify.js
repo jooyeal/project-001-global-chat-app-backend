@@ -14,7 +14,7 @@ const verifyToken = (req, res, next) => {
     });
   } else {
     req
-      .status(401)
+      .status(403)
       .json({ errorCode: 100, errorMessage: "token does not exist" });
   }
 };
@@ -32,4 +32,4 @@ const verifyTokenAndIsAdmin = (req, res, next) => {
   });
 };
 
-module.exports({ verifyToken, verifyTokenAndIsAdmin });
+module.exports = { verifyToken, verifyTokenAndIsAdmin };

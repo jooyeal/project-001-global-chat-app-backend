@@ -119,7 +119,9 @@ const getPostDataAtPage = async (req, res) => {
       .sort({ createdAt: 1 })
       .skip((req.params.number - 1) * 5)
       .limit(5);
-    res.status(200).json(post);
+    const isLast = post.length < 5 ? true : false;
+    const form = { post, isLast };
+    res.status(200).json(form);
   } catch (err) {
     res.status(500).json(err);
   }
