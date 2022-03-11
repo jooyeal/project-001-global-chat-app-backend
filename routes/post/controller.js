@@ -4,6 +4,7 @@ const Post = require("../../models/Post");
 const uploadPost = async (req, res) => {
   const newPost = new Post({
     userId: req.body.userId,
+    userName: req.body.userName,
     desc: req.body.desc,
     photos: req.body.photos,
     audios: req.body.audios,
